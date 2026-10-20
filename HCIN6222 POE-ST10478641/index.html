@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Campus parking availability prototype">
+<title>CampusPark | Smart Parking</title>
+<link rel="stylesheet" href="css/style.css"><script src="js/script.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="topbar">
+<a class="brand" href="#dashboard"><span class="logo" aria-hidden="true">P</span><span><b>CampusPark</b><small>Smart parking prototype</small></span></a>
+<nav aria-label="Main navigation"><a href="#dashboard">Overview</a><a href="#parking-map">Parking map</a><a href="#usage">Usage insights</a></nav>
+<span class="mode"><i></i> Prototype mode</span>
+</header>
+<main id="main" class="wrap">
+<section id="dashboard" class="welcome">
+<div><p class="eyebrow">CAMPUS PARKING</p><h1>Find your parking spot.</h1><p class="muted">Check bay availability before you arrive on campus.</p></div>
+<div class="updated"><span aria-hidden="true">↻</span><div><small>Parking status</small><b id="last-updated">Updated just now</b></div><button class="secondary" id="refresh">Refresh</button></div>
+</section>
+<section class="stats" aria-label="Parking availability summary">
+<article><small>Available bays</small><strong id="available">12</strong><p>Spaces shown as open</p></article>
+<article><small>Occupied bays</small><strong id="occupied">12</strong><p>Spaces shown as in use</p></article>
+<article><small>Total bays</small><strong id="total">24</strong><p>Bays in this demo</p></article>
+<article><small>Occupancy</small><strong><span id="occupancy">50</span>%</strong><div class="track" id="progress" role="progressbar" aria-label="Parking occupancy" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span id="progress-fill"></span></div></article>
+</section>
+<section class="main-grid">
+<section id="parking-map" class="panel">
+<div class="panel-head"><div><p class="eyebrow">LIVE BAY OVERVIEW</p><h2>Parking map</h2></div><label>Parking area <select id="area"><option value="all">All areas</option><option value="A">Area A</option><option value="B">Area B</option></select></label></div>
+<p class="muted">Select a bay to view its demo status. Text labels are used as well as colour.</p>
+<div class="legend"><span>🟩 Available</span><span>🟥 Occupied</span><span>🔵 Selected</span></div>
+<div class="parking"><div class="lane">↕ &nbsp; DRIVE AISLE &nbsp; ↕</div><div id="bays" class="bay-grid" aria-label="Interactive parking bays"></div><div class="lane exit">↕ &nbsp; CAMPUS EXIT &nbsp; ↕</div></div>
+<p class="note"><b>Prototype note:</b> Bay statuses are simulated and are not connected to physical sensors.</p>
+</section>
+<aside class="panel details">
+<p class="eyebrow">BAY DETAILS</p><h2>Selected bay</h2><div class="big-p">P</div>
+<h3 id="bay-name">Bay A01</h3><span id="bay-status" class="pill">Available</span>
+<dl><div><dt>Parking area</dt><dd id="bay-area">Area A</dd></div><div><dt>Bay number</dt><dd id="bay-number">A01</dd></div><div><dt>Data source</dt><dd>Simulated sensor</dd></div><div><dt>Last checked</dt><dd>Just now</dd></div></dl>
+<button id="find" class="primary">Find an available bay</button><p class="note">Follow campus signs. Do not interact with this website while driving.</p>
+</aside>
+</section>
+<section id="usage" class="panel usage">
+<div class="panel-head"><div><p class="eyebrow">CAMPUS PLANNING</p><h2>Parking usage insights</h2></div><span class="tag">Illustrative demo data</span></div>
+<p class="muted">Sample figures show how aggregated information could help management understand demand. They are not actual school statistics.</p>
+<div class="insights">
+<article class="subpanel"><small>Peak-time occupancy</small><h3>08:00–09:00</h3><p class="muted">Example demand during the morning arrival period.</p><div class="bars" aria-label="Illustrative occupancy by time"><i style="height:38%"></i><i style="height:72%"></i><i style="height:88%"></i><i style="height:61%"></i><i style="height:43%"></i><i style="height:30%"></i></div><div class="bar-labels"><span>07:00</span><span>09:00</span><span>12:00</span></div></article>
+<article class="subpanel"><small>Example arrival methods</small>
+<div class="commute"><span>🚗 Arrive by car</span><b>60%</b><div class="track"><span style="width:60%"></span></div></div>
+<div class="commute"><span>🚌 Public transport</span><b>25%</b><div class="track"><span style="width:25%"></span></div></div>
+<div class="commute"><span>🚶 Walk / other</span><b>15%</b><div class="track"><span style="width:15%"></span></div></div>
+<p class="note">Illustrative percentages only. Real figures require a suitable, privacy-conscious collection method.</p></article>
+</div>
+</section>
+<section class="notice"><b aria-hidden="true">i</b><p><strong>About this prototype</strong><br>Parking statuses and usage insights are sample data. A production version would require validated sensors, a secure data service and testing with campus users.</p></section>
+</main>
+<footer><span>CampusPark · HCIN6222 Part 2 prototype</span><span>Clear, usable and accessible parking information.</span></footer>
+<div id="live" class="sr-only" role="status" aria-live="polite"></div>
+</body></html>
